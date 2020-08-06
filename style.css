@@ -1,0 +1,132 @@
+/* Write some CSS below*/
+body {
+    font-family: Overpass;
+}
+
+h1, h2, h3{ /* text h1 h2 and h3 general definitions*/
+    color: #9f9fa1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {/* paragraf general definitions*/
+    font-family: 'Roboto', sans-serif;
+    color: #404042;
+    opacity: .7;
+}
+
+.container{ /* containers area*/
+    width: 800px;
+    margin: auto;
+}
+
+.banner {/* banner background*/
+    background-image:  url('images/background.jpg');
+    background-size: cover; /* cover escala la imagen para que se ajuste al banner*/
+    background-position: center;
+    padding: 150px 0; /*espaci entre el borde el texto*/
+    text-align: center;
+}
+
+.banner h1 { /* Banner especify text format h1*/
+    font-family: 'Chilanka', cursive; 
+    color: white;
+    font-size: 45px;
+    margin: 0;
+}
+
+.banner h2 { /* Banner especify text format h2*/
+  font-family: 'Maven Pro', sans-serif; 
+  color: rgb(250, 96, 7);
+  font-size: 35px;
+  margin: 0;
+}
+
+.banner p { /* Banner especify text format p (for the botton text)*/
+    color: white;
+    font-size: 24px;
+}
+
+body {
+    margin: 0;
+}
+
+.btn {/* for the botton text, especify text format and box size*/
+    background-color: #32e31a;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    /*padding: 14px 48px;*/
+    padding: 7px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn:hover { /*change boton's color*/
+    background-color: #0D1EC6;
+    color: white;
+  }
+    
+.card {/*individual card format*/
+    background: white;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px;
+    flex-grow: 1;
+  }
+   
+.card img { /*individual card image format*/
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+.card h3 { /*h3 text format for card*/
+  color: rgb(250, 96, 7);  
+  margin-bottom: 0;
+  }
+  
+.footer { /*footer box format*/
+    background: #404042;
+    text-align: center;
+    padding: 24px 0;
+  }
+  
+.footer p { /*footer text format*/
+    color: white;
+  }
+  
+.cards { /*cards organization*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  /*responsive configuration*/
+@media (max-width: 800px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+@media (min-width: 500px) {
+    .container {
+      width: 400px;
+    }
+  }
+
+@media (min-width: 800px) {
+    .container {
+      width: 600px;
+    }
+  }
+  
+@media (min-width: 1000px) {
+    .container {
+      width: 800px;
+    }
+  }
+  
