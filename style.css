@@ -25,6 +25,9 @@ p {/* paragraf general definitions*/
     background-position: center;
     padding: 150px 0; /*espaci entre el borde el texto*/
     text-align: center;
+    color: white;
+    animation-name: fade;
+    animation-duration: 2s;
 }
 
 .banner h1 { /* Banner especify text format h1*/
@@ -50,6 +53,7 @@ body {
     margin: 0;
 }
 
+/*botton*/
 .btn {/* for the botton text, especify text format and box size*/
     background-color: #32e31a;
     color: white;
@@ -64,69 +68,96 @@ body {
 
 .btn:hover { /*change boton's color*/
     background-color: #0D1EC6;
-    color: white;
+    transform: scale(1.05); /*aumenta um pocuo o tamanho*/
   }
     
-.card {/*individual card format*/
+.cards {/*individual card format*/
     background: white;
     box-shadow: 0 0 16px rgba(0,0,0,0.1);
     border-radius: 4px;
     text-align: center;
     padding: 24px;
     flex-grow: 1;
+    display: grid; /* forma de mostrase en cuadrícula */
+    grid-template-columns: 1fr 1fr 1fr; /* 1frame aqui muestra los 3 */
+    grid-gap: 16px; /* separación */
+    margin-bottom: 24px;
   }
    
-.card img { /*individual card image format*/
+.cards img { /*individual card image format*/
     width: 180px;
     height: 180px;
     object-fit: cover;
     border-radius: 4px;
   }
   
-.card h3 { /*h3 text format for card*/
+.cards h3 { /*h3 text format for card*/
   color: rgb(250, 96, 7);  
   margin-bottom: 0;
   }
   
+.card-white,
+.card-white:hover{ /* se usa solo para los links de cada card*/
+  color: inherit; /* hereda color de la estructura donde se encuentra*/
+  text-decoration: none;/* quita los subrayados de los links*/
+  }
+
+
 .footer { /*footer box format*/
     background: #404042;
     text-align: center;
     padding: 24px 0;
+    margin: 5px auto;
   }
   
 .footer p { /*footer text format*/
     color: white;
   }
   
-.cards { /*cards organization*/
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
-    margin-bottom: 24px;
-  }
-
   /*responsive configuration*/
-@media (max-width: 800px) {
-    .cards {
-      grid-template-columns: 1fr;
+ /*Tela pequena*/ 
+@media (min-width: 300px) { 
+  .container {
+    width: 400px;
     }
+  .cards{
+    grid-template-columns: 1fr;
   }
+}
+/*Tela meia*/
+@media (min-width: 700px) { 
+  .container {
+    width: 600px;
+    }
+  .cards{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+ /*Tela grande*/ 
+@media (min-width: 1000px) { 
+  .container {
+    width: 900px;
+  }
+  .cards{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .typewriter{
+    animation: animated-text 4s steps(31,end);
+    animation-iteration-count: infinite;
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    overflow: hidden;
+    position: relative;
+  }
+}
 
-@media (min-width: 500px) {
-    .container {
-      width: 400px;
-    }
+@keyframes animated-text{
+  from{
+    width: 0;
   }
+  to{
+    width: 100%;
+  }
+}
 
-@media (min-width: 800px) {
-    .container {
-      width: 600px;
-    }
-  }
-  
-@media (min-width: 1000px) {
-    .container {
-      width: 800px;
-    }
-  }
-  
